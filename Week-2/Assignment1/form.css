@@ -1,0 +1,23 @@
+body{
+    align-items: center;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    
+}
+div{
+    margin: 5px;
+    
+}
+input{
+    position:absolute;
+    left: 10%;
+}
+textarea{
+    position:absolute;
+    left: 10%;
+}
+.file{
+    margin-top: 37px;
+}
