@@ -1,0 +1,11 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+section{
+    margin: 5px;
+}
+input{
+    position: absolute;
+    left: 10%;
+}
