@@ -1,24 +1,29 @@
-function playGuessingGame(numToGuess,totalGuesses=10) {
-    var userInput = prompt("Enter a number between 1 and 100:");
-    var guessCount;
-    for(guessCount=1;guessCount<totalGuesses;guessCount++){
-        if(isNaN(userInput)){
-            userInput=prompt("Please enter a valid number.")
-            
-        }
-        if(userInput==numToGuess){
-            alert(`congrats your guess is right, you guess the number ${numToGuess} in ${guessCount} guess`);
-            return (guessCount);
-        }else if(userInput<numToGuess){
-            userInput=prompt(`${userInput} is too small. Guess a larger number.`);
-        }else{
-            userInput=prompt(`${userInput} is too large. Guess a smaller number.`);
-        }
+function playGuessingGame(numToGuess, totalGuesses = 10) {
+  var count = 1;
+  var message="Enter a number between 1 and 100."
+  while (count <= totalGuesses) {
+    let userInput = prompt(message);
+    //console.log(userInput);
+    if(userInput==null){
+        return 0;
     }
-    alert(`You are out off guesses, The correct number is ${numToGuess}`)
-    return (0);
+    if(isNaN(userInput) || userInput==""){
+        message = `Please enter a number.(${totalGuesses - count} attempt left)`;
+        continue;
+    }  
+    if (userInput == numToGuess) {
+        alert(`You guessed the number ${numToGuess} in ${count} attempt`);
+        return (count);
+    }
+    else if (userInput < numToGuess) {
+        message=`${userInput}is too small. Guess a larger number.(${totalGuesses-count} attempt left)`
+    } else {
+        message=`${userInput}is too large. Guess a small number.(${totalGuesses-count} attempt left)`
+    }
     
+    count++;
+    }
+    alert(`Game Over, the number is ${numToGuess}`);
+    return 0;
 }
-
-var noOfGuesses=playGuessingGame(11,2);
-console.log(noOfGuesses);
+playGuessingGame(13, 4);
