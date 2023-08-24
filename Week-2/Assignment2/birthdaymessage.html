@@ -20,7 +20,7 @@
             </section>
             <section>
                 <label for="date">Date to send</label>
-                <input type="date" id="date" name="date"/>
+                <input type="date" id="date" name="date" min={new Date().toISOString().split('T')[0]}/>
             </section>
             <section>
                 <label for="color">Message color</label>
