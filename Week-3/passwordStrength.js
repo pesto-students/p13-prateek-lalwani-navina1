@@ -1,14 +1,17 @@
 function isStrongPassword(password) {
     if (password.length < 8) {
-        return false;
+        let message="password length is less than 8 digits";
+        return message;
     }
     if (/password/i.test(password)) {
-        return false;
+        let message="password includes the word 'password'";
+        return message;
     }
     if (!/[A-Z]/.test(password)) {
-        return false;
+        let message="password should contain atleast one capital letter";
+        return message;
     }
-    return true;
+    return "password saved successfully";
 }
-var a=isStrongPassword("avina12p")
+var a=isStrongPassword("Navi")
 console.log(a)
