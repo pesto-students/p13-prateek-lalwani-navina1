@@ -10,7 +10,7 @@ class BankAccount {
       (this.#accountHolderName = accountHolderName);
   }
   getBalance() {
-    return `Account balance is ${this.#balance}`;
+    return this.#balance;
   }
   addBalance(amount) {
     this.#balance = this.#balance + amount;
@@ -33,11 +33,11 @@ class CheckingAccount extends BankAccount {
   }
 }
 // const checkingAccount1 = new CheckingAccount(102,1000,"navina");
-// console.log(checkingAccount1.getBalance())
+// console.log("Account Balance is",checkingAccount1.getBalance())
 // console.log(checkingAccount1.deposit(400))
-// console.log(checkingAccount1.getBalance())
+// console.log("Account Balance is",checkingAccount1.getBalance())
 // console.log(checkingAccount1.withdraw(200))
-// console.log(checkingAccount1.getBalance())
+// console.log("Account Balance is",checkingAccount1.getBalance())
 
 class SavingsAccount extends BankAccount {
   constructor(accountNumber, balance, accountHolderName) {
@@ -57,8 +57,8 @@ class SavingsAccount extends BankAccount {
   }
 }
 const savingsAccount1 = new SavingsAccount(301, 2000, "Anu");
-// console.log(savingsAccount1.getBalance());
-// console.log(savingsAccount1.deposit(200));
-// console.log(savingsAccount1.getBalance());
+console.log("Account Balance is",savingsAccount1.getBalance());
+console.log(savingsAccount1.deposit(200));
+console.log("Account Balance is",savingsAccount1.getBalance());
 console.log(savingsAccount1.withdraw(200))
-console.log(savingsAccount1.getBalance());
+console.log("Account Balance is",savingsAccount1.getBalance());
