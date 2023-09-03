@@ -17,10 +17,10 @@ class Calculator {
 }
 class ScientificCalculator extends Calculator {
   square(num) {
-    return this.number * this.number;
+    return num * numb;
   }
   cube(num) {
-    return this.number * this.number * this.number;
+    return num * numb * num;
   }
   power(num, power) {
     return num ** power;
