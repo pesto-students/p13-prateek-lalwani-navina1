@@ -77,7 +77,7 @@ function newGame() {
 		computerMoveTimeout=0;
 	}
 	const buttons = getGameBoardButtons();
-	for(const cell in buttons){
+	for(const cell of buttons){
 		cell.innerHTML="";
 		cell.className="";
 		cell.disabled=false;
@@ -101,18 +101,19 @@ function switchTurn() {
 	// TODO: Complete the function
 	const gameCurrentStatus=checkForWinner();
 	const label=document.getElementById("turnInfo");
-	console.log(gameCurrentStatus,"gameCurrentStatus")
-	console.log(playerTurn)
+	//console.log(gameCurrentStatus,"gameCurrentStatus")
+	//console.log(playerTurn)
 	if(gameCurrentStatus==1){
+		playerTurn=!playerTurn;
 		if(!playerTurn){
-			console.log("Entered")
+			//console.log("Entered")
 			label.innerText="Computers Turn"
-			computerMoveTimeout=setTimeout(makeComputerMove(),1000);
-			playerTurn=true;
+			computerMoveTimeout=setTimeout(makeComputerMove,1000);
+			//playerTurn=true;
 		}else{
-			console.log("Entered else")
+			//console.log("Entered else")
 			label.innerText="Your Turn";
-			playerTurn=false;
+			//playerTurn=false;
 		}
 	}
 	else if(gameCurrentStatus==4 ||gameCurrentStatus==2||gameCurrentStatus==3){
@@ -130,16 +131,21 @@ function switchTurn() {
 function makeComputerMove() {
 	// TODO: Complete the function
 	const buttons=getGameBoardButtons();
-	const availableButton=[];
-	for(const button in buttons){
-		if(button.innerHTML!="X" || button.innerHTML!="O"){
-			availableButton.push(button)
+	const availableButtons=[];
+	for(const button of buttons){
+		if(button.innerHTML!="X" && button.innerHTML!="O"){
+			availableButtons.push(button)
 		}
 	}
-	const randomIndex = Math.floor(Math.random() * availableButton.length);
-	const selectedButton = availableButton[randomIndex];
-	selectedButton.innerHTML="O";
-	selectedButton.classList.add("o");
-	selectedButton.setAttribute("disabled",true);
-	switchTurn()
+	if (availableButtons.length > 0) {
+		//console.log(availableButtons)
+        const randomIndex = Math.floor(Math.random() * availableButtons.length);
+        //console.log(randomIndex);
+        const selectedButton = availableButtons[randomIndex];
+        //console.log("selected", selectedButton);
+        selectedButton.innerHTML = "O";
+        selectedButton.classList.add("o");
+        selectedButton.disabled = true;
+        switchTurn();
+    }
 }
