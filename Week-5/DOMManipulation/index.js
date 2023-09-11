@@ -12,4 +12,10 @@ window.addEventListener("load", () => {
     let newli = document.createElement("li");
     newli.innerText="newwwwwwwwwwwwwww"
     list.replaceChild(newli, exsistingli);
+
+    const helement = document.getElementsByTagName("h1")[0];
+    helement.style.background = "red";
+    helement.addEventListener("click", () => {
+        helement.style.background = "blue";
+    })
 });
