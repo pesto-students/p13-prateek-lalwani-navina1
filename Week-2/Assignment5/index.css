@@ -1,0 +1,39 @@
+ul{
+    display: flex;
+    flex-direction: row;
+    margin-left: -35px;
+   
+}
+li{
+    margin-right: 15px;
+    list-style-type: none;
+}
+.mainSection{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+img{
+    width: 30%;
+    height: 50%;
+}
+.name{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.rating {
+    font-size: 24px;
+    color: gold; 
+}
+p{
+    margin-top: -3px;
+}
+div{
+ margin: 10px;
+}
+input{
+    margin: 5px;
+}
+iframe{
+    margin-bottom: 5px;
+}

@@ -1,0 +1,11 @@
+/* main{
+    display: flex;
+    flex-direction: column;
+} */
+.players{
+    display: flex;
+    flex-direction: column;
+}
+main{
+    width: 30%;
+}
