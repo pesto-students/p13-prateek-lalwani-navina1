@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Items</title>
+</head>
+<body>
+    <div id="firstElement">
+        <!-- Content will be displayed here -->
+    </div>
+    <div id="secondElement">
+        <!-- Content will be displayed here -->
+    </div>
+    <button id="Previous">Previous</button>
+    <button id="Next">Next</button>
+
+    <script>
+        const objJson = [
+            { adName: "AdName 1"},
+            { adName: "AdName 2"},
+            { adName: "AdName 3"},
+            { adName: "AdName 4"},
+            { adName: "AdName 5"},
+            { adName: "AdName 6"},
+            { adName: "AdName 7"},
+            { adName: "AdName 8"},
+            { adName: "AdName 9"},
+            { adName: "AdName 10"}
+        ];
+
+        let counter = 0;
+        let displayElement1 = document.getElementById("firstElement");
+        let displayElement2 = document.getElementById("secondElement");
+
+        function displayItems() {
+            displayElement1.innerHTML = `<p>${objJson[counter]?.adName}</p>`;
+            displayElement2.innerHTML = `<p>${objJson[counter + 1]?.adName}</p>`;
+        }
+
+        displayItems();
+
+        const previousButton = document.getElementById("Previous");
+        previousButton.addEventListener("click", () => {
+            counter -= 2;
+            if (counter < 0) {
+                counter = 0;
+            }
+            displayItems();
+        });
+
+        const nextButton = document.getElementById("Next");
+        nextButton.addEventListener("click", () => {
+            counter += 2;
+            if (counter >= objJson.length) {
+                counter = objJson.length - 2;
+            }
+            displayItems();
+        });
+    </script>
+</body>
+</html>
