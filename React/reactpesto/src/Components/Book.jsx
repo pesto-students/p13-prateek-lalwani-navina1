@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { memo } from 'react'
+//pure component
 function Book({title,author,year}) {
     const style={"border":"2px solid red","padding":"2px","margin":"5px"}
   return (
@@ -12,4 +12,4 @@ function Book({title,author,year}) {
   )
 }
 
-export default Book
+export default memo(Book) 

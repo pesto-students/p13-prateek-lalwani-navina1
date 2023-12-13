@@ -1,11 +1,13 @@
 
 import Booklist from './Components/Booklist';
+import BooklistClassComponent from './Components/BooklistClassComponent';
 
 function App() {
-  const style={"display":"flex","justify-content": "center"}
+  const style={"display":"flex","justifyContent": "center"}
   return (
     <div style={style}>
-      <Booklist/>
+      {/* <Booklist/> */}
+      <BooklistClassComponent/>
     </div>
   );
 }
