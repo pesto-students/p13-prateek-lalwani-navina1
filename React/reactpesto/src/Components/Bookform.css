@@ -89,3 +89,13 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+.pagination{
+    display: flex;
+    padding:20px;
+    justify-content: "space-between";
+}
+.page{
+    padding: 0px 10px;
+    display:flex;
+    justify-content:space-between;
+}
