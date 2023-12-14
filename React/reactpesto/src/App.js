@@ -6,8 +6,8 @@ function App() {
   const style={"display":"flex","justifyContent": "center"}
   return (
     <div style={style}>
-      {/* <Booklist/> */}
-      <BooklistClassComponent/>
+      <Booklist/>
+      {/* <BooklistClassComponent/> */}
     </div>
   );
 }

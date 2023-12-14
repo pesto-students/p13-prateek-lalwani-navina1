@@ -1,5 +1,7 @@
 import React from 'react'
 import Book from './Book';
+import BookForm from './BookForm';
+import "./Bookform.css"
 
 function Booklist() {
     const books = [
@@ -8,15 +10,15 @@ function Booklist() {
         { title: 'Book 3', author: 'Author 3', year: 2022 },
         // Add more books if you'd like
       ];
-    const style={"justify-content": "center"}
       
   return (
-    <div style={style}>
+    <div className="booklist-container">
         <h1>Booklist</h1>
-        <ul>
+        <BookForm/>
+        <ul className="book-list">
             {books.map((book,index)=>(
                 // <li key={index}>{book.title} by {book.author}, {book.year}</li>
-                <Book title={book.title} author={book.author} year={book.year}/>
+                <Book key={index} title={book.title} author={book.author} year={book.year}/>
             ))}
         </ul>
     </div>
