@@ -48,7 +48,7 @@ function Booklist() {
         </ul>
 
         }
-        <div className='pagination'>
+        {books.length>0 && <div className='pagination'>
             <p>Page {currentPage} of {totalPage}</p>
             <div className='page'>
                 <button onClick={() => handlePage(currentPage - 1)} disabled={currentPage === 1}>
@@ -59,7 +59,7 @@ function Booklist() {
                     Next
                 </button>
             </div>
-        </div>
+        </div>}
     </div>
   )
 }
