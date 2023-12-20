@@ -4,6 +4,7 @@ import BookForm from './BookForm';
 import "./Bookform.css";
 import { useState } from 'react';
 import useBookFilter from '../Hooks/useBookFilter';
+import useBookSorter from '../Hooks/useBookSorter';
 
 export const themeContext = createContext();
 const currentTheme = localStorage.getItem("theme");
@@ -46,6 +47,10 @@ function Booklist() {
     const handlePage = (newPage) => {
         setCurrentPage(newPage)
     }
+    const sortedBooks = useBookSorter(books,"title-asc");
+    const handleSortBook=()=>{
+        setBooks(sortedBooks)
+    }
     useEffect(() => {
         //console.log(books)
     }, [books])
@@ -59,6 +64,7 @@ function Booklist() {
                     value={searchWord}
                     onChange={(e) => setSearchWord(e.target.value)
                     } />
+                <button onClick={handleSortBook}>Sort Books</button>
                 <button onClick={themeHandler}>Switch theme</button>
             </div>
             <div className="booklist-container">
