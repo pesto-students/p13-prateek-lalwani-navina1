@@ -1,7 +1,9 @@
-import React, { memo } from 'react';
-import "./Bookform.css"
+import React, { memo, useContext } from 'react';
+import "./Bookform.css";
+import { themeContext } from './Booklist';
 //pure component
 function Book({title,author,year,deleteBook}) {
+  const theme=useContext(themeContext);
   const containerStyle = {
     border: "2px solid gray",
     margin: "5px",

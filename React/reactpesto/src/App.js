@@ -5,10 +5,11 @@ import BooklistClassComponent from './Components/BooklistClassComponent';
 function App() {
   const style={"display":"flex","justifyContent": "center"}
   return (
-    <div>
+    <>
       <Booklist/>
-      {/* <BooklistClassComponent/> */}
-    </div>
+    </>
+      
+    
   );
 }
 
