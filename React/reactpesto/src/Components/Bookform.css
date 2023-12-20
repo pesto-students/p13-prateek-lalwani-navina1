@@ -99,3 +99,29 @@ button:hover {
     display:flex;
     justify-content:space-between;
 }
+.navbar{
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+  justify-content: "space-between";
+}
+.navbar h1 {
+  margin: 0;
+
+}
+
+.navbar input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.navbar button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
